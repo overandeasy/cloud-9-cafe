@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { reactRouter } from "@react-router/dev/vite";
 import tailwindcss from '@tailwindcss/vite'
+import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -9,5 +10,11 @@ export default defineConfig({
   server: {
     host: '127.0.0.1', // or 'localhost'
     port: 5173
-  }
+  },
+  // shadcn: so the app can resolve paths without error
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
 })

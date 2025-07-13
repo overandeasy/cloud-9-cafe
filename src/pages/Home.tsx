@@ -1,5 +1,7 @@
 // import type { Route } from "./+types/about";
 
+import { app } from "../lib/firebase";
+
 // export async function loader({ request }: Route.LoaderArgs) {
 //   const data = await fetchApiFromServer({ request }); // (1)
 //   return data;
@@ -18,8 +20,6 @@
 //   };
 // }
 
-function Home() {
+export default function Home() {
   return <div>Home</div>;
 }
-
-export default Home;

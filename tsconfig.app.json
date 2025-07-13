@@ -28,7 +28,14 @@
     "rootDirs": [
       ".",
       "./.react-router/types"
-    ]
+    ],
+    /* shadcn to resolve paths*/
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
     "src",
