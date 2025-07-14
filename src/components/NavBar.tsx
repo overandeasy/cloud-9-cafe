@@ -39,16 +39,7 @@ function NavBar() {
         ) : (
           <div className="flex items-center space-x-4">
             <UserCard />
-            <Button asChild size="sm">
-              <NavLink
-                to="/sign-up"
-                className={({ isActive }) =>
-                  `${isActive ? "text-background" : ""}`
-                }
-              >
-                Sign Up
-              </NavLink>
-            </Button>
+
             <Button asChild size="sm">
               <NavLink
                 to="/sign-in"
@@ -57,6 +48,16 @@ function NavBar() {
                 }
               >
                 Sign In
+              </NavLink>
+            </Button>
+            <Button asChild size="sm">
+              <NavLink
+                to="/sign-up"
+                className={({ isActive }) =>
+                  `${isActive ? "text-background" : ""}`
+                }
+              >
+                Sign Up
               </NavLink>
             </Button>
           </div>

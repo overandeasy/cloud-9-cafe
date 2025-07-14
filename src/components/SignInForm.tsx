@@ -83,6 +83,7 @@ function SignInForm() {
           </div>
         )}
         <Button
+          className="w-full"
           disabled={form.formState.isSubmitting || isSigningIn}
           type="submit"
         >

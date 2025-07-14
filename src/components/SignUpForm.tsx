@@ -147,17 +147,20 @@ function SignUpForm() {
             {form.formState.errors.root?.message}
           </div>
         )}
-        <Button
-          disabled={form.formState.isSubmitting || isSigningUp}
-          type="submit"
-        >
-          {form.formState.isSubmitting || isSigningUp
-            ? "Signing Up..."
-            : "Sign Up"}
-        </Button>
-        <Button type="button" onClick={() => form.reset()}>
-          Reset
-        </Button>
+        <div className="flex w-full gap-2 justify-center">
+          <Button
+            className="w-1/2"
+            disabled={form.formState.isSubmitting || isSigningUp}
+            type="submit"
+          >
+            {form.formState.isSubmitting || isSigningUp
+              ? "Signing Up..."
+              : "Sign Up"}
+          </Button>
+          <Button className="w-1/2" type="button" onClick={() => form.reset()}>
+            Reset
+          </Button>
+        </div>
       </form>
     </Form>
   );

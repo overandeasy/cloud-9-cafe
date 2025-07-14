@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { UserAuth } from "@/context/AuthContext";
+// import { EyeIcon, EyeOffIcon } from "lucide-react";
 
 function UserCard() {
   const { user, signOut } = UserAuth() || {};
