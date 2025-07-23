@@ -87,7 +87,7 @@ export default function Home() {
       </p>
       {error && <div className="text-red-600 font-semibold">{error}</div>}
       {loading ? (
-        <div className="flex items-center justify-center max-h-[80vh]">
+        <div className="flex items-center justify-center max-h-[60vh]">
           <Loading />
         </div>
       ) : (
