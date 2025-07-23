@@ -51,7 +51,11 @@ export const signInFormSchema = z.object({
 export const coffeeFormSchema = z.object({
     // id: z.union([z.string(), z.number()]),
     title: z.string().min(1, "Title is required").max(50, "Title shouldn't be more than 50 characters"),
-    description: z.string().min(1, "Description is required").max(300, "Description shouldn't be more than 300 characters"),
+    description: z.string().min(1, "Description is required").max(2000, "Description shouldn't be more than 2000 characters")
+        .refine(
+            (val) => val.trim().split(/\s+/).length <= 200,
+            { message: "Description shouldn't be more than 200 words" }
+        ),
     ingredients: z.array(
         z.object({
             name: z.string().min(1, "Ingredient name should not be empty"),
