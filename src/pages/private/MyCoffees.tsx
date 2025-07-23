@@ -1,15 +1,13 @@
-// export async function clientLoader() {
-//   const user = await auth.authStateReady();
-//   console.log("clientLoader user:", user);
-//   return user;
-// }
-
+import { MyCoffeeList } from "@/components/MyCoffeeList";
 import ProtectedRoute from "@/components/ProtectedRoute";
 
 function MyCoffees() {
   return (
     <ProtectedRoute>
-      <div>My Coffees</div>
+      <div className="pt-4 justify-between flex">
+        <h1 className="text-2xl font-bold mb-4">My Coffees</h1>
+      </div>
+      <MyCoffeeList />
     </ProtectedRoute>
   );
 }

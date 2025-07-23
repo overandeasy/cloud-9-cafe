@@ -48,7 +48,7 @@
   --background: oklch(1 0 0);
   /* --foreground: oklch(0.145 0 0); */
   /* Tunning down the darkness in light mode to soft gray */
-  --foreground: oklch(0.25 0 0);
+  --foreground: oklch(0.35 0 0);
   /* Theme color for the cafe app */
   --cafe-theme: oklch(0.4817 0.0839 198.73);
   --card: oklch(1 0 0);

@@ -12,24 +12,26 @@ import { Link } from "react-router";
 
 export default function SignIn() {
   return (
-    <Card className="flex w-full max-w-md self-center text-center">
-      <CardHeader>
-        <CardTitle>Sign In</CardTitle>
-        <CardDescription></CardDescription>
-      </CardHeader>
-      <CardContent>
-        <SignInForm />
-      </CardContent>
-      <CardFooter className="self-center text-sm">
-        <CardAction>
-          <p className=" text-gray-500">
-            Don't have an account?{" "}
-            <Link to="/sign-up" className="text-blue-500 hover:underline">
-              Sign Up
-            </Link>
-          </p>
-        </CardAction>
-      </CardFooter>
-    </Card>
+    <div className="min-h-[80vh] flex items-center justify-center">
+      <Card className="flex w-full max-w-md self-center text-center">
+        <CardHeader>
+          <CardTitle>Sign In</CardTitle>
+          <CardDescription></CardDescription>
+        </CardHeader>
+        <CardContent>
+          <SignInForm />
+        </CardContent>
+        <CardFooter className="self-center text-sm">
+          <CardAction>
+            <p className=" text-gray-500">
+              Don't have an account?{" "}
+              <Link to="/sign-up" className="text-blue-500 hover:underline">
+                Sign Up
+              </Link>
+            </p>
+          </CardAction>
+        </CardFooter>
+      </Card>
+    </div>
   );
 }

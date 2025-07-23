@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./context/ThemeProvider";
 import { AuthContextProvider } from "./context/AuthContext";
+import { Toaster } from "./components/ui/sonner";
+import Loading from "./components/ui/Loading";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,19 +27,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 // HydrateFallback is rendered while the client loader is running
 export function HydrateFallback() {
-  return <div>Loading...</div>;
+  return <Loading />;
 }
+
 export default function Root() {
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
       <AuthContextProvider>
-        <div
-          id="root"
-          className="min-h-screen justify-between p-4 w-full flex flex-col"
-        >
+        <div id="root" className="min-h-screen  p-4 w-full flex flex-col">
           <NavBar />
-          <Outlet />
+          <main className="flex-1 flex flex-col">
+            <Outlet />
+          </main>
           <Footer />
+          <Toaster position="top-center" />
         </div>
       </AuthContextProvider>
     </ThemeProvider>

@@ -1,5 +1,5 @@
 import { signInFormSchema } from "@/lib/zod";
-import type { signInFormData } from "@/lib/zod";
+import type { SignInFormData } from "@/lib/zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -21,7 +21,7 @@ import { useTransition } from "react";
 // Handle form submission
 
 function SignInForm() {
-  const form = useForm<signInFormData>({
+  const form = useForm<SignInFormData>({
     resolver: zodResolver(signInFormSchema),
     defaultValues: {
       email: "",

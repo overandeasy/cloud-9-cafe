@@ -1,10 +1,10 @@
-import { app } from "@/lib/firebase";
-import type { signInFormData, signUpFormData } from "@/lib/zod";
-import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/lib/firebase";
+import type { SignInFormData, SignUpFormData } from "@/lib/zod";
+import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 
-const auth = getAuth(app);
 
-const signUp = async (values: signUpFormData) => {
+
+const signUp = async (values: SignUpFormData) => {
     const { firstName, lastName, email, password } = values;
 
 
@@ -42,7 +42,7 @@ const signOut = async () => {
 
 
 
-const signIn = async (values: signInFormData) => {
+const signIn = async (values: SignInFormData) => {
     try {
 
         const { email, password } = values

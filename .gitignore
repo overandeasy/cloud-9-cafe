@@ -34,3 +34,9 @@ vite-env.d.ts
 
 # React Router
 .react-router/
+
+#Firebase
+.firebase/
+
+# Build output
+build/

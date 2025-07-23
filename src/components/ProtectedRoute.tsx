@@ -5,7 +5,7 @@ import { Navigate, useLocation } from "react-router";
 export default function ProtectedRoute({ children }: { children: ReactNode }) {
   const { user } = UserAuth() || {};
   const location = useLocation();
-
+  // console.log("ProtectedRoute user:", user);
   if (!user) {
     // Save the path they tried to access
     return <Navigate to="/sign-in" state={{ from: location }} replace />;

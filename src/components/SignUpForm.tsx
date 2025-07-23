@@ -1,5 +1,5 @@
 import { signUpFormSchema } from "@/lib/zod";
-import type { signUpFormData } from "@/lib/zod";
+import type { SignUpFormData } from "@/lib/zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -20,7 +20,7 @@ import { useTransition } from "react";
 // Handle form submission
 
 function SignUpForm() {
-  const form = useForm<signUpFormData>({
+  const form = useForm<SignUpFormData>({
     resolver: zodResolver(signUpFormSchema),
     defaultValues: {
       firstName: "",

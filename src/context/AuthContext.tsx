@@ -31,10 +31,11 @@ export const AuthContextProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       await currentUser?.reload(); // Reload the user to ensure we have the latest data
+      // console.log("AuthContext currentUser:", currentUser);
       setUser(currentUser);
     });
     const from = location.state?.from?.pathname || "/";
-    console.log("AuthContext redirecting. From:", from);
+    // console.log("AuthContext redirecting. From:", from);
     navigate(from, { replace: true });
     return () => unsubscribe();
   }, [user]);

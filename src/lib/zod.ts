@@ -48,6 +48,34 @@ export const signInFormSchema = z.object({
     password: z.string().min(8, "Password must be at least 8 characters long"),
 });
 
+export const coffeeFormSchema = z.object({
+    // id: z.union([z.string(), z.number()]),
+    title: z.string().min(1, "Title is required").max(50, "Title shouldn't be more than 50 characters"),
+    description: z.string().min(1, "Description is required").max(300, "Description shouldn't be more than 300 characters"),
+    ingredients: z.array(
+        z.object({
+            name: z.string().min(1, "Ingredient name should not be empty"),
+        })
+    ).min(1, "At least one ingredient is required"),
+    image: z
+        .instanceof(File)
+        .refine(
+            (file) => file && file.type.startsWith('image/'),
+            { message: "File must be an image" }
+        )
+        .refine(
+            (file) => file && file.size <= 5 * 1024 * 1024,
+            { message: "Image must be under 5MB" }
+        ).optional(),
+    published: z.boolean(),
+    // createdAt: z.date().optional(),
+    // updatedAt: z.date().optional(),
+});
 
-export type signUpFormData = z.infer<typeof signUpFormSchema>
-export type signInFormData = z.infer<typeof signInFormSchema>
+
+
+
+
+export type SignUpFormData = z.infer<typeof signUpFormSchema>
+export type SignInFormData = z.infer<typeof signInFormSchema>
+export type CoffeeFormData = z.infer<typeof coffeeFormSchema>
